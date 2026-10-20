@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>assistência técnica de tv</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <p>Assistência para TV</p>
+    </header>
+
+    <main>
+        <h1>Sua TV apresentou defeito? Conte o que aconteceu e receba atendimento mais rápido.</h1>
+        <p>Responda algumas perguntas rápidas pelo WhatsApp e seu pedido será encaminhado para o técnico responsável.</p>
+    
+        <label>"qual é a marca da sua tv".</label>
+        <div>
+            <button type="button" class="marca">samsung</button>
+            <button type="button" class="marca">LG</button>
+            <button type="button" class="marca">philco</button>
+            <button type="button" class="marca">outras marcas</button>
+        </div>
+        <label>qual é o defeito da sua tv</label>
+        <div>
+            <button type="button" class="defeito">não liga</button>
+            <button type="button" class="defeito">tela preta</button>
+            <button type="button" class="defeito">sem imagem</button>
+            <button type="button" class="defeito">sem som</button>
+            <button type="button" class="defeito">liga e desliga sozinho</button>
+            <button type="button" class="defeito">outros</button>
+        </div>
+
+        <section class="como-funciona" id="como-funciona">
+            <h2>Do primeiro clique até o técnico, sem enrolação.</h2>
+
+        </section>
+
+        <a class="botao" id="botao-whatsapp" href="https://wa.me/5511969005738">faça seu orçamento WhatsApp</a>
+
+    </main>
+
+</body>
+</html>
+
+<script>
+let marcaSelecionada = "";
+let defeitoSelecionado = "";
+
+document.querySelectorAll(".marca").forEach(function(botao) {
+    botao.addEventListener("click", function() {
+        marcaSelecionada = this.textContent.trim();
+
+        document.querySelectorAll(".marca").forEach(function(item) {
+            item.classList.remove("selecionado");
+        });
+
+        this.classList.add("selecionado");
+    });
+});
+
+document.querySelectorAll(".defeito").forEach(function(botao) {
+    botao.addEventListener("click", function() {
+        defeitoSelecionado = this.textContent.trim();
+
+        document.querySelectorAll(".defeito").forEach(function(item) {
+            item.classList.remove("selecionado");
+        });
+
+        this.classList.add("selecionado");
+    });
+});
+
+document.getElementById("botao-whatsapp").addEventListener("click", function(event) {
+    event.preventDefault();
+
+    if (!marcaSelecionada || !defeitoSelecionado) {
+        alert("Por favor, escolha a marca e o defeito da sua TV.");
+        return;
+    }
+
+    const mensagem = `Olá! Preciso de atendimento para minha TV.\nMarca: ${marcaSelecionada}\nDefeito: ${defeitoSelecionado}`;
+    const telefone = "5511969005738";
+    const link = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
+
+    window.open(link, "_blank");
+});
+</script>

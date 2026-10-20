@@ -1,0 +1,191 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: radial-gradient(ellipse at top, #132b3a 0%, #09131f 45%, #05080d 100%);
+    color: #f5d67a;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    line-height: 1.6;
+}
+
+header {
+    padding: 22px 20px;
+    background: #101010;
+    border-bottom: 1px solid #5a4817;
+}
+
+header p {
+    margin: 0;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+main {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 55px 24px;
+}
+
+h1 {
+    margin: 0 0 20px;
+    font-size: clamp(30px, 5vw, 48px);
+    line-height: 1.2;
+    color: #f5d67a;
+}
+
+main > p {
+    max-width: 650px;
+    margin: 0 auto 24px;
+    color: #d0d0d0;
+    font-size: 17px;
+}
+
+.botao {
+    display: inline-block;
+    margin: 12px 0 35px;
+    padding: 15px 25px;
+    background: #f5d67a;
+    color: #080808;
+    border: 2px solid #f5d67a;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.botao:hover {
+    background: #ffe9a6;
+    transform: translateY(-2px);
+}
+
+label {
+    display: block;
+    margin: 25px 0 15px;
+    color: #fff4c9;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+main > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 30px;
+    padding: 22px;
+    background: #101010;
+    border: 1px solid #383020;
+    border-radius: 18px;
+}
+
+.marca,
+.defeito {
+    padding: 12px 18px;
+    background: #1b1b1b;
+    color: #f5d67a;
+    border: 1px solid #806b30;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.marca:hover,
+.defeito:hover {
+    background: #f5d67a;
+    color: #080808;
+    border-color: #f5d67a;
+    transform: translateY(-2px);
+}
+
+.marca:focus-visible,
+.defeito:focus-visible,
+.botao:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 3px;
+}
+
+.como-funciona {
+    margin-top: 55px;
+    padding: 32px;
+    background: #101010;
+    border: 1px solid #5a4817;
+    border-radius: 20px;
+}
+
+h2 {
+    margin: 0;
+    font-size: 28px;
+    line-height: 1.3;
+    color: #fff4c9;
+}
+
+@media (max-width: 600px) {
+    main {
+        padding: 35px 16px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    main > p {
+        font-size: 15px;
+    }
+
+    .botao {
+        max-width: 100%;
+        padding: 14px 18px;
+        font-size: 14px;
+    }
+
+    main > div {
+        gap: 10px;
+        padding: 16px 10px;
+    }
+
+    .marca,
+    .defeito {
+        padding: 12px 14px;
+        font-size: 14px;
+    }
+
+    .como-funciona {
+        margin-top: 35px;
+        padding: 24px 16px;
+    }
+
+    h2 {
+        font-size: 23px;
+    }
+}
+
+
+body {
+    background-color: #05080d;
+    background-image:
+        linear-gradient(rgba(0, 220, 255, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 220, 255, 0.06) 1px, transparent 1px),
+        radial-gradient(ellipse at top, #132b3a 0%, #09131f 45%, #05080d 100%);
+    background-size: 40px 40px, 40px 40px, 100% 100%;
+    background-repeat: repeat, repeat, no-repeat;
+    background-attachment: fixed;
+}
+
+
+.marca.selecionado,
+.defeito.selecionado {
+    background: #00d9ff;
+    color: #05080d;
+    border-color: #00d9ff;
+    box-shadow: 0 0 15px rgba(0, 217, 255, 0.7);
+    transform: scale(1.05);
+}
